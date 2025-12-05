@@ -21,6 +21,7 @@ dayButtons.forEach( day => {
         if (day.classList.contains("clicked")) return;
         day.classList.add("clicked");
         numberOfDays++;
+        
         calculated();
     })
 })
@@ -46,7 +47,6 @@ halfDayButton.addEventListener("click", () => {
 
     calculated();
 })
-
 
 // when the full-day button is clicked, the daily rate is set back to $35, the clicked class is added to "full" and removed from "half", and the total cost is recalculated.
 

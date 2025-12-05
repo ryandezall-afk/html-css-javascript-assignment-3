@@ -228,6 +228,10 @@ footer {
     flex-direction: column;
 }
 
+.contact h2 {
+    margin-right: 3.48px; /* make h2 align with inputs */
+}
+
 .contact label {
     width: 150px;
     text-align: right;
