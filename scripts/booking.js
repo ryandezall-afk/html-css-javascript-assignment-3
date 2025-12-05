@@ -1,3 +1,6 @@
+/*jshint esversion: 6 */
+/* i added this to pass js checker */
+
 /********* create variables *********/
 // useful variables might be: the cost per day, the number of days selected, and elements on the screen that will be clicked or will need to be modified. 
 // Do any of these variables need to be initialized when the page is loaded? 
@@ -21,10 +24,10 @@ dayButtons.forEach( day => {
         if (day.classList.contains("clicked")) return;
         day.classList.add("clicked");
         numberOfDays++;
-        
+
         calculated();
-    })
-})
+    });
+});
 
 /********* clear days *********/
 // when the clear-button is clicked, the "clicked" class is removed from all days, any other relevant variables are reset, and the calculated cost is set to 0.
@@ -35,7 +38,7 @@ clearButton.addEventListener("click", () => {
     });
     numberOfDays = 0;
     calculatedCost.innerHTML = 0;
-})
+});
 
 /********* change rate *********/
 // when the half-day button is clicked, set the daily rate to $20, add the "clicked" class to the "half" element, remove it from the "full" element, and recalculate the total cost.
@@ -46,7 +49,7 @@ halfDayButton.addEventListener("click", () => {
     fullDayButton.classList.remove("clicked");
 
     calculated();
-})
+});
 
 // when the full-day button is clicked, the daily rate is set back to $35, the clicked class is added to "full" and removed from "half", and the total cost is recalculated.
 
@@ -56,7 +59,7 @@ fullDayButton.addEventListener("click", () => {
     halfDayButton.classList.remove("clicked");
 
     calculated();
-})
+});
 
 /********* calculate *********/
 // when a calculation is needed, set the innerHTML of the calculated-cost element to the appropriate value
