@@ -147,6 +147,7 @@ footer {
     justify-content: center;
     align-items: center;
     padding: 25px;
+    text-align: center;
 }
 
 @media (max-width: 740px) {
@@ -256,6 +257,10 @@ footer {
         flex-wrap: wrap;
         justify-content: center;
     }
+
+    .booking-page h2 {
+        text-align: center;
+    }
 }
 
 .booking-page {
@@ -269,9 +274,14 @@ footer {
     align-items: center;
 }
 
+.intro {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
 .day-selector {
     display: flex;
-    margin-bottom: 12px;
+    margin-bottom: 20px;
     justify-content: center;
     gap: 20px;
 }
@@ -290,8 +300,12 @@ footer {
     padding: 5px;
 }
 
+.fake-button {
+    padding: 5px;
+}
+
 .top-margin {
-    margin-top: 24px;
+    margin-top: 20px;
     margin-bottom: 12px;
     text-align: center;
     margin-left: 0;
@@ -317,56 +331,67 @@ footer {
     - the edges of the button will line up exactly with the text-area element. HINT: time for some math!
 */
 
-.contact {
-    height: 420px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+.contact input, 
+.contact textarea, 
+.contact button {
+    box-sizing: border-box; 
+    width: 100%;            
+    max-width: 300px;       
+    padding: 10px;
+    border: 1px solid black;
+    font-family: inherit;   
+    font-size: 16px;
+    line-height: 24px;
 }
 
 .contact h2 {
-    margin-right: 3.48px; /* make h2 align with inputs */
-}
-
-.contact label {
-    width: 150px;
-    text-align: right;
-    margin-right: 24px;
-    padding-top: 5px;
-}
-
-.contact input {
-    width: 300px;
-}
-
-textarea {
-    height: 150px;
-    width: 300px;
-}
-
-textarea,
-.contact input {
-    border: 1px solid black;
-    padding: 5px;
-}
-
-.contact input,
-textarea,
-.contact button {
-    font-family: 'Montserrat', sans-serif;
-    line-height: 24px;
-    font-size: 16px;
+    text-align: center;
     margin-bottom: 24px;
 }
 
-form button {
-    width: 312px;
-    margin-left: 174px;
+.contact form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    width: 100%;
 }
 
-.return-home:hover {
-    text-decoration: underline;
+.contact .flex {
+    display: flex;          
+    justify-content: center; 
+    width: 100%;
+    margin-bottom: 24px;    
+}
+
+.contact label {
+    width: 150px;           
+    text-align: right;      
+    margin-right: 24px; 
+    padding-top: 10px;     
+}
+
+.contact button {
+    margin-left: 170px; 
+    margin-top: 10px;
     cursor: pointer;
-    color: #E5AF42
+    background-color: #E5AF42; 
+}
+
+@media (max-width: 650px) {
+    .contact .flex {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact label {
+        text-align: left;
+        width: 100%;
+        max-width: 312px;
+        margin-right: 0;
+        margin-bottom: 5px;
+    }
+
+    .contact button {
+        margin-left: 0; 
+    }
 }
