@@ -16,10 +16,10 @@ You are discouraged from changing any provided CSS.
 
 /************* site defaults *************/
 body {
-    width: 950px;
-    margin: 0 auto;
+    width: 100%; /* adjusts to full width */
+    margin: 0;
     font-family: 'Montserrat', sans-serif;
-    line-height: 1.5;
+    line-height: 1.5;;
 }
 
 /* TO DO: all elements with the .flex class applied are to be made into flex-box containers. */
@@ -41,6 +41,15 @@ body {
         - change the text colour to white, and 
         - change the cursor to pointer.
 */
+
+main {
+    max-width: 950px;
+    width:100%;
+    margin: 0 auto;
+    padding: 0 25px;
+    box-sizing: border-box;
+}
+
 h1 {
     font-size: 48px;
     text-align: center;
@@ -93,21 +102,39 @@ footer a:hover {
 
 header {
     background-color: #E5AF42;
-    height: 150px;
     margin-bottom: 25px;
+    width: 100%;
 }
 
-header img {
-    width: 100px;
-    height: 100px;
-    margin: 25px 0px 25px 25px;
+.header-content {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding: 25px;
+    flex-wrap: wrap;
+    min-width: 0;
 }
 
 header h1 {
+    text-align: center;
+    min-width: 0;
+    overflow-wrap: break-word;
+}
+
+header nav ul {
+    gap: 50px;
+    font-size: 24px;
+}
+
+header nav {
     display: flex;
-    justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
+    align-items: center;
+    justify-self: end;
+}
+
+header img {
+    width: 60px;
+    height: 60px;
 }
 
 footer {
@@ -122,6 +149,19 @@ footer {
     padding: 25px;
 }
 
+@media (max-width: 740px) {
+    .header-content {
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto;
+        row-gap: 10px;
+        text-align: center;
+    }
+
+    header nav {
+        justify-self: center;
+    }
+}
+
 /************* index page *************/
 
 /* TO-DO: 
@@ -133,8 +173,10 @@ footer {
 */
 
 .index img {
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
     margin-bottom: 50px;
+    height: auto;
     margin-left: 25px;
 }
 
@@ -146,9 +188,48 @@ footer {
     margin-bottom: 12px;
 }
 
-.large-text{
-    width: 250px;
-    margin-left: 150px;
+.large-text {
+    max-width: 250px;
+    width: 100%;
+}
+
+.index .flex{
+    flex-direction: row;
+}
+
+@media (max-width: 740px) {
+    .index .flex {
+        flex-direction: column;
+        align-items: center;
+        margin: 0; 
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .index {
+        padding: 0;
+    }
+
+    .index img {
+        margin-left: 0;
+        margin-top: 38px;
+        margin-bottom: 50px;
+        width: 100%;
+    }
+
+    .large-text {
+        margin-left: 0;
+    }
+
+    .home-links {
+        gap: 20px;
+    }
+}
+
+.home-links {
+    flex: 1 1 300px;
+    justify-content: space-evenly;
+
 }
 
 /************* bookings page *************/
@@ -165,10 +246,23 @@ footer {
 
 */
 
+@media (max-width: 650px) {
+    .booking-page {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    .day-selector {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
 .booking-page {
-    width: 600px;
-    font-size: 18px;
     display: flex;
+    max-width: 600px;
+    width: 100%;
+    font-size: 18px;
     flex-direction: column;
     justify-content: center;
     margin: 0 auto;
@@ -176,6 +270,7 @@ footer {
 }
 
 .day-selector {
+    display: flex;
     margin-bottom: 12px;
     justify-content: center;
     gap: 20px;
@@ -200,7 +295,9 @@ footer {
     margin-bottom: 12px;
     text-align: center;
     margin-left: 0;
-    width: 600px;
+    max-width: 600px;
+    width: 100%;
+    min-width: 0;
 }
 
 .clear-days {
@@ -266,4 +363,10 @@ textarea,
 form button {
     width: 312px;
     margin-left: 174px;
+}
+
+.return-home:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    color: #E5AF42
 }
